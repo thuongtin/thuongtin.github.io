@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert Cookie</title>
+</head>
+<body>
+
+
+<form>
+    <textarea name="oldcookie" onchange="convertCookie()" id="oldcookie" style="width: 100%; height: 300px; resize: vertical; margin: 0px;"></textarea><br /><br />
+    <textarea name="newcookie" id="newcookie" style="width: 100%; height: 300px; resize: vertical; margin: 0px;"></textarea><br /><br />
+</form>
+
+<script type="text/javascript">
+    let oneYearFromNow = new Date();
+    let secure = ["c_user", "datr", "dpr", "fr", "presence", "sb", "spin", "xs"];
+    let httpOnly = ["datr", "fr", "sb", "spin", "xs"];
+    oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+    let expTime = oneYearFromNow.toISOString();
+    function convertCookie() {
+        let result = [];
+        let oldCookie = document.getElementById("oldcookie").value;
+        let cookieArr = oldCookie.split(";");
+        for (let cookie of cookieArr) {
+            result.push(newCookie(cookie));
+        }
+        document.getElementById("newcookie").value = JSON.stringify(result);
+    }
+
+    function newCookie(cookie) {
+        let cookieArr = cookie.split("=");
+        return {
+            "Name": cookieArr[0],
+            "Value": cookieArr[1],
+            "Path": "/",
+            "Secure": secure.includes(cookieArr[0]),
+            "HttpOnly": httpOnly.includes(cookieArr[0]),
+            "Domain": ".facebook.com",
+            "Url": "https://www.facebook.com",
+            "Expires": expTime
+        }
+    }
+</script>
+
+</body>
+</html>
