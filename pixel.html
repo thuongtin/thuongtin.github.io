@@ -68,9 +68,9 @@
 
 <script>
 	$(function() {
-	  $( "#token_admin" ).val(localStorage.getItem("token_admin"));
-	  $( "#id_bm" ).val(localStorage.getItem("id_bm"));
-	  $( "#id_pixel" ).val(localStorage.getItem("id_pixel"));
+	  $( "#token_admin" ).val(localStorage.getItem("token_admin")).trigger("change");
+	  $( "#id_bm" ).val(localStorage.getItem("id_bm")).trigger("change");
+	  $( "#id_pixel" ).val(localStorage.getItem("id_pixel")).trigger("change");
 	});
 	$( "#token_admin" ).change(function() {
 	  localStorage.setItem("token_admin", $(this).val());
