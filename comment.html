@@ -150,7 +150,7 @@
                                  if(postIDs.indexOf(post.id)==-1 && noti_checked.indexOf(post.id)==-1){ 
 
                                   let objectID = (post.id.indexOf('_')!=-1)?post.id.split('_')[1]:post.id;
-                                  postIDs.push(objectID); noti_checked.push(noti.id); myStorage.setItem('noti_checked',noti_checked);
+                                  postIDs.push(objectID); noti_checked.push(post.id); myStorage.setItem('noti_checked',noti_checked);
                                    }
                              }
 
