@@ -205,11 +205,11 @@
           FB.api(
               '/'+postID+'/comments',
               'GET',
-              {"fields":"can_hide,is_hidden,message,comments{comments,message,can_hide,is_hidden,from}",'limit':100,'after':after, "access_token":access_token},
+              {"fields":"attachment,can_hide,is_hidden,message,comments{comments,message,can_hide,is_hidden,from}",'limit':100,'after':after, "access_token":access_token},
               function(response) {
                  
                   for(let cmt of response.data){
-                    if(!cmt.is_hidden && cmt.can_hide) comments.push([cmt.id,'hide',cmt.message]);
+                    if(!cmt.is_hidden && cmt.can_hide && cmt.hasOwnProperty("attachment")) comments.push([cmt.id,'hide',cmt.message]);
                     if(cmt.comments){
                         for(let subcmt of cmt.comments.data) {
                         if( subcmt.can_hide && subcmt.message.match(/\w{1,63}\.\w{1,5}\//))  comments.push([subcmt.id,'delete',subcmt.message]);          
