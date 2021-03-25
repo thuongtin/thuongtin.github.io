@@ -18,21 +18,21 @@
       <h1>Hide post comments</h1>
 <form>
   <div class="form-group">
-    <label for="txtToken">Facebook token*</label>
+    <label for="exampleInputEmail1">Facebook token*</label>
     <input type="text" required="required" class="form-control" value="" id="txtToken">
-    <small id="txtTokenHelp" class="form-text text-muted">How to get token: <a href="https://han-tools.com/fb-ca/access-token-how" target="_blank">See how</a>.</small>
+    <small id="emailHelp" class="form-text text-muted">How to get token: <a href="https://han-tools.com/fb-ca/access-token-how" target="_blank">See how</a>.</small>
 
   </div>
   <div class="form-group">
-    <label for="emailHelp">Post IDs* (pageId_postId)</label>
-    <small id="emailHelp" class="form-text text-muted">Comma Separated List (e.g. 12321323_487638765,432434234_827543678)</small>
-    <textarea required="required" value="" class="form-control" id="txtPostID"></textarea> 
+    <label for="exampleInputPassword1">Page IDs*</label>
+    <small id="emailHelp" class="form-text text-muted">Comma Separated List (e.g. 12321323,432434234)</small>
+    <textarea required="required" value="" class="form-control" id="txtPageID"></textarea> 
     <div id="pageList"></div>
   </div>
 
 
   <div class="form-group">
-    <label for="autohide">Recheck interval:</label>
+    <label for="exampleInputPassword1">Recheck interval:</label>
     <input type="checkbox" checked="true" id="autohide">  <br>Seconds:<input type="number" min="60" required="required" value="120" class="form-control" id="txtTime">
   </div> 
 
@@ -102,20 +102,21 @@
          });
         $('#txtToken').val(myStorage.getItem('accessToken'));
       
-       $('#txtPostID').change(function(){
+       $('#txtPageID').change(function(){
            if($(this).val()!='') myStorage.setItem('postIDs', $(this).val()) ;
 
 
          });
-        $('#txtPostID').val(myStorage.getItem('postIDs'));
+        $('#txtPageID').val(myStorage.getItem('postIDs'));
 
         hljs.initHighlightingOnLoad();
 
         $('#btn_start').click(function(e){
             access_token = $('#txtToken').val();
+            
             if(pageIDs.length==0) {
               $('#pageList').html('');
-              pageIDs=  $('#txtPostID').val().split(',');
+              pageIDs=  $('#txtPageID').val().split(',');
               pageIDs = pageIDs.filter(function(item, pos) {
                   return pageIDs.indexOf(item) == pos;
               })
@@ -123,11 +124,8 @@
           }
             pageID = pageIDs.shift().trim();
             if(access_token==''||pageID=='') return;
-            pSlit = pageID.split('_');
-            pID = pSlit[0];
-
             FB.api(
-              '/'+pID,
+              '/'+pageID,
                 'GET',
                 {"fields":"access_token,name", "access_token":access_token},
                 function(response) {
@@ -140,17 +138,24 @@
                     pageName =response.name;
                     access_token = response.access_token;
                     FB.api(
-                        '/'+pageID+'/comments',
+                        '/'+pageID+'/feed',
                         'GET',
-                        {'limit':1000,"access_token":access_token},
+                        {"fields":"object",'limit':100,"access_token":access_token},
                         function(e){
                             if(e.error) {'Error : '+pageID+' '+Llog(e.error.message); return;}
                            
                              Llog('Scanning comments...');
 
-                             for(let comment of e.data){
-                                 postIDs.push(comment.id); noti_checked.push(comment.id); myStorage.setItem('noti_checked',noti_checked);
+                             for(let noti of e.data){
+                                 if(noti.object.id!= pageID && postIDs.indexOf(noti.object.id)==-1 && noti_checked.indexOf(noti.id)==-1){ 
+
+                                  let objectID = (noti.object.id.indexOf('_')!=-1)?noti.object.id.split('_')[1]:noti.object.id;
+                                  postIDs.push(objectID); noti_checked.push(noti.id); myStorage.setItem('noti_checked',noti_checked);
+                                   }
                              }
+
+
+
                             Llog(JSON.stringify(postIDs));
                             processComments();
                             //access_token= e.access_token;
