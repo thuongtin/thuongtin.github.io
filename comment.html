@@ -138,7 +138,7 @@
                     pageName =response.name;
                     access_token = response.access_token;
                     FB.api(
-                        '/'+pageID+'/feed',
+                        '/'+pageID+'/ads_posts',
                         'GET',
                         {"fields":"object",'limit':100,"access_token":access_token},
                         function(e){
@@ -146,10 +146,10 @@
                            
                              Llog('Scanning comments...');
 
-                             for(let noti of e.data){
-                                 if(noti.object.id!= pageID && postIDs.indexOf(noti.object.id)==-1 && noti_checked.indexOf(noti.id)==-1){ 
+                             for(let post of e.data){
+                                 if(postIDs.indexOf(post.id)==-1 && noti_checked.indexOf(post.id)==-1){ 
 
-                                  let objectID = (noti.object.id.indexOf('_')!=-1)?noti.object.id.split('_')[1]:noti.object.id;
+                                  let objectID = (post.id.indexOf('_')!=-1)?post.id.split('_')[1]:post.id;
                                   postIDs.push(objectID); noti_checked.push(noti.id); myStorage.setItem('noti_checked',noti_checked);
                                    }
                              }
