@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Amazon Review Analyzer</title>
+    <title>Privacy Policy - Amazon Review Analyzer Pro</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,61 +46,101 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p><em>Last updated: March 15, 2024</em></p>
+        <p><em>Last updated: May 15, 2024</em></p>
 
         <div class="highlight">
-            <p>We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information when you use the Amazon Review Analyzer extension.</p>
+            <p>Your privacy matters to us. This Privacy Policy outlines how the Amazon Review Analyzer Pro extension collects, uses, and protects your information when you use our Chrome extension.</p>
         </div>
 
-        <h2>1. Extension Overview</h2>
-        <p>Amazon Review Analyzer (also known as Amarize Extension) is a Chrome extension that helps analyze and summarize product reviews on Amazon using artificial intelligence APIs like Perplexity and OpenAI.</p>
+        <h2>1. Introduction</h2>
+        <p>Amazon Review Analyzer Pro is a Chrome extension that helps users analyze and summarize Amazon product reviews using artificial intelligence through services like Perplexity API and OpenAI API.</p>
 
-        <h2>2. Information We Collect</h2>
-        <p><strong>We do not collect or store your personal information</strong> on our servers. All data is stored locally in your browser, including:</p>
+        <h2>2. Information Collection</h2>
+        <p><strong>We do not collect, store, or transmit your personal information</strong> to our servers. All data processing occurs locally within your browser:</p>
         <ul>
-            <li>API keys (for Perplexity, OpenAI, or custom services) that you provide</li>
-            <li>Extension settings and preferences</li>
-            <li>Cache of previously generated review summaries</li>
+            <li>API keys that you provide for AI services (Perplexity, OpenAI, or custom endpoints)</li>
+            <li>Extension settings and user preferences</li>
+            <li>Cached review summaries (stored locally to prevent redundant API calls)</li>
+            <li>Amazon product information and publicly available review content that you choose to analyze</li>
         </ul>
 
-        <h2>3. How We Use Information</h2>
-        <p>The extension uses the collected information to:</p>
+        <h2>3. Data Usage</h2>
+        <p>The extension uses information solely to:</p>
         <ul>
-            <li>Send requests to Perplexity/OpenAI APIs to analyze product reviews</li>
-            <li>Store generated summaries for future use without requiring additional API requests</li>
-            <li>Customize the user experience based on saved settings</li>
+            <li>Analyze and summarize Amazon product reviews by sending review text to the AI service you've configured</li>
+            <li>Store generated summaries locally for faster access when revisiting products</li>
+            <li>Customize your experience based on your saved preferences</li>
+            <li>Enable basic extension functionality</li>
         </ul>
 
-        <h2>4. Extension Permissions</h2>
-        <p>The extension requires the following permissions to function:</p>
+        <h2>4. Required Permissions</h2>
+        <p>To provide its functionality, the extension requires these Chrome permissions:</p>
         <ul>
-            <li><strong>Tabs permission:</strong> To identify the current URL and Amazon product ID</li>
-            <li><strong>Storage permission:</strong> To store your settings and cache summaries</li>
-            <li><strong>Host permissions:</strong> To connect to Perplexity/OpenAI APIs and Amazon websites</li>
+            <li><strong>activeTab/tabs:</strong> To identify the current Amazon product page and gather review content</li>
+            <li><strong>storage:</strong> To store your settings, API keys, and cached summaries locally</li>
+            <li><strong>host permissions (amazon.com and related domains):</strong> To access and analyze product reviews</li>
+            <li><strong>host permissions (AI service endpoints):</strong> To communicate with Perplexity/OpenAI APIs for review analysis</li>
         </ul>
+        <p>We request only the minimum permissions necessary for the extension to function properly.</p>
 
         <h2>5. API Key Security</h2>
-        <p>Your API keys are stored locally in your browser through Chrome's Storage API. We do not send, store, or have access to your API keys on our servers.</p>
-
-        <h2>6. Product Review Data</h2>
-        <p>The extension collects publicly available reviews from Amazon to send to the analysis API. We do not store these reviews outside of your browser and only use them to generate summaries.</p>
-
-        <h2>7. Third Parties</h2>
-        <p>The extension uses the following third-party services:</p>
+        <p>Your API keys are:</p>
         <ul>
-            <li><strong>Perplexity AI API:</strong> For analyzing product reviews. Please see <a href="https://www.perplexity.ai/privacy-policy" target="_blank" rel="noopener">Perplexity's Privacy Policy</a>.</li>
-            <li><strong>OpenAI API:</strong> For analyzing product reviews. Please see <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI's Privacy Policy</a>.</li>
+            <li>Stored locally in your browser using Chrome's secure Storage API</li>
+            <li>Never transmitted to our servers</li>
+            <li>Only sent directly to the respective AI service when you request review analysis</li>
+            <li>Fully under your control - you can remove them at any time</li>
         </ul>
 
-        <h2>8. Changes to Privacy Policy</h2>
-        <p>We may update this privacy policy to reflect changes to our practices. We will notify you of any significant changes by updating the "Last updated" date at the top of this page.</p>
+        <h2>6. Review Data Processing</h2>
+        <p>When you analyze a product:</p>
+        <ul>
+            <li>Publicly available Amazon review content is sent to the AI service you've configured</li>
+            <li>This data is processed according to the respective AI service's terms and policies</li>
+            <li>Review content is only sent when you explicitly request analysis</li>
+            <li>Results are cached locally in your browser to improve performance</li>
+        </ul>
 
-        <h2>9. Contact Us</h2>
-        <p>If you have any questions about this privacy policy, please contact us:</p>
+        <h2>7. Third-Party Services</h2>
+        <p>The extension integrates with these third-party services:</p>
+        <ul>
+            <li><strong>Perplexity AI:</strong> When using Perplexity for analysis, review data is processed according to <a href="https://www.perplexity.ai/privacy-policy" target="_blank" rel="noopener">Perplexity's Privacy Policy</a></li>
+            <li><strong>OpenAI:</strong> When using OpenAI for analysis, review data is processed according to <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI's Privacy Policy</a></li>
+            <li><strong>ExtensionPay:</strong> For processing payments and managing subscriptions. When you purchase a subscription, payment information is processed by ExtensionPay according to their <a href="https://extensionpay.com" target="_blank" rel="noopener">privacy information available on their website</a>. As stated in their FAQ, they collect your email address and store payment information securely in Stripe. We do not receive or store your complete payment details.</li>
+            <li><strong>Amazon:</strong> The extension operates on Amazon's website to collect publicly available review content</li>
+        </ul>
+        <p>Please note that these third-party services have their own privacy policies and terms of service that govern how they handle your data.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Our extension is not intended for use by individuals under 13 years of age. We do not knowingly collect or process information from children under 13.</p>
+
+        <h2>9. Data Retention</h2>
+        <p>Since all data is stored locally in your browser:</p>
+        <ul>
+            <li>Data retention is under your control</li>
+            <li>You can clear cached summaries through the extension settings</li>
+            <li>Uninstalling the extension will remove all locally stored data</li>
+        </ul>
+        <p>For subscription information, ExtensionPay retains payment data according to their privacy policy and legal requirements.</p>
+
+        <h2>10. Your Rights</h2>
+        <p>You have full control over your data and can:</p>
+        <ul>
+            <li>View, edit, or delete your API keys and settings at any time</li>
+            <li>Clear cached summaries</li>
+            <li>Manage your subscription through ExtensionPay</li>
+            <li>Uninstall the extension to remove all locally stored data</li>
+        </ul>
+
+        <h2>11. Changes to Privacy Policy</h2>
+        <p>We may update this Privacy Policy to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify users of any material changes by updating the "Last updated" date at the top of this page.</p>
+
+        <h2>12. Contact Information</h2>
+        <p>If you have questions or concerns about this Privacy Policy or our privacy practices, please contact us at:</p>
         <p><a href="mailto:ai.dev@thuongtin.com">ai.dev@thuongtin.com</a></p>
 
         <div class="footer">
-            <p>&copy; 2024 Amazon Review Analyzer. All rights reserved.</p>
+            <p>&copy; 2024 Amazon Review Analyzer Pro. All rights reserved.</p>
         </div>
     </div>
 </body>
