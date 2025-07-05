@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy for AI Image Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; color: #222; background: #fff; }
+        h1, h2, h3 { color: #2c3e50; }
+        ul { margin-left: 1.5em; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        .section { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for AI Image Studio</h1>
+    <p><strong>Last Updated:</strong> January 2025</p>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>
+            AI Image Studio ("the Extension") is committed to protecting your privacy. This privacy policy explains how we handle information when you use our Chrome extension.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Information Collection and Use</h2>
+        <h3>What We <strong>DON'T</strong> Collect</h3>
+        <p>AI Image Studio does <strong>NOT</strong> collect, store, or transmit any personal information, including but not limited to:</p>
+        <ul>
+            <li>Browsing history</li>
+            <li>Personal data</li>
+            <li>Image content</li>
+            <li>API keys (stored locally only)</li>
+            <li>Usage analytics</li>
+            <li>Cookies or tracking data</li>
+        </ul>
+        <h3>Local Storage Only</h3>
+        <p>The Extension stores the following data locally on your device using Chrome's storage API:</p>
+        <ul>
+            <li>Your API keys (encrypted locally)</li>
+            <li>Extension settings (provider preferences, download options)</li>
+            <li>Temporary image data during processing (cleared after use)</li>
+        </ul>
+        <p>This data never leaves your device except when:</p>
+        <ul>
+            <li>Images are sent directly to AI providers (OpenAI or Google) for processing</li>
+            <li>Images are sent to PhotoRoom API for background removal (if enabled)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Third-Party Services</h2>
+        <p>The Extension communicates directly with:</p>
+        <ol>
+            <li>
+                <strong>OpenAI API</strong> (if configured)<br>
+                Purpose: Image generation using GPT Image 1<br>
+                Data sent: Cropped image and generation parameters<br>
+                <a href="https://openai.com/privacy" target="_blank">Privacy Policy</a>
+            </li>
+            <li>
+                <strong>Google AI API</strong> (if configured)<br>
+                Purpose: Image generation using Imagen<br>
+                Data sent: Cropped image and generation parameters<br>
+                <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+            </li>
+            <li>
+                <strong>PhotoRoom API</strong> (optional)<br>
+                Purpose: Background removal<br>
+                Data sent: Generated image for background removal<br>
+                <a href="https://www.photoroom.com/privacy" target="_blank">Privacy Policy</a>
+            </li>
+            <li>
+                <strong>ExtensionPay</strong> (for subscription management)<br>
+                Purpose: Trial and subscription verification<br>
+                Data sent: Extension ID and user identifier<br>
+                <a href="https://extensionpay.com/privacy" target="_blank">Privacy Policy</a>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Data Security</h2>
+        <ul>
+            <li>API keys are stored using Chrome's <code>storage.sync</code> API with local encryption</li>
+            <li>All API communications use HTTPS encryption</li>
+            <li>No data is stored on external servers</li>
+            <li>Image processing happens directly between your browser and the AI provider</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Permissions Explained</h2>
+        <p>The Extension requires these permissions:</p>
+        <ul>
+            <li><strong>storage</strong>: Save your settings and API keys locally</li>
+            <li><strong>activeTab</strong>: Access images on the current webpage you're viewing</li>
+            <li><strong>contextMenus</strong>: Add right-click menu option for images</li>
+            <li><strong>tabs</strong>: Open settings and payment pages</li>
+            <li><strong>downloads</strong>: Save generated images to your computer</li>
+            <li><strong>host permissions</strong>: Access AI provider APIs and images on websites</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Data Retention</h2>
+        <ul>
+            <li>Temporary image data is cleared immediately after processing</li>
+            <li>Settings and API keys remain until you uninstall the extension</li>
+            <li>No logs or history of your image generations are kept</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Children's Privacy</h2>
+        <p>
+            The Extension is not intended for use by children under 13 years of age. We do not knowingly collect information from children under 13.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Changes to This Policy</h2>
+        <p>
+            We may update this privacy policy from time to time. Any changes will be reflected in the "Last Updated" date above.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Your Rights</h2>
+        <ul>
+            <li>Delete all local data by uninstalling the extension</li>
+            <li>View stored data in Chrome's extension settings</li>
+            <li>Revoke API access by removing your API keys</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Contact Information</h2>
+        <p>
+            For privacy concerns or questions about this policy, please contact:<br>
+            Email: <a href="mailto:[Your contact email]">[Your contact email]</a>
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Compliance</h2>
+        <p>
+            This extension complies with:
+        </p>
+        <ul>
+            <li>Chrome Web Store Developer Program Policies</li>
+            <li>General Data Protection Regulation (GDPR)</li>
+            <li>California Consumer Privacy Act (CCPA)</li>
+        </ul>
+        <p>
+            By using AI Image Studio, you agree to this privacy policy.
+        </p>
+    </div>
+</body>
+</html>
